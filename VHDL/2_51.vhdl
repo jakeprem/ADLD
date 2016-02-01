@@ -1,0 +1,14 @@
+ENTITY problem251 IS
+	PORT 	(x1,x2,x3		: IN		BIT;
+			f				: OUT		BIT);
+END problem251;
+
+ARCHITECTURE F1 OF problem251 IS
+BEGIN
+	f <= (x1 AND NOT x3) OR (x2 AND NOT x3) OR (NOT x3 AND NOT x4) OR (x1 AND x2) OR (x1 AND NOT x4);
+END F1;
+
+ARCHITECTURE F2 OF problem251 IS
+BEGIN
+	f <= (x1 OR NOT x3) AND (x1 OR x2 OR NOT x4) AND (x2 OR NOT x3 OR NOT x4)
+END F2;
